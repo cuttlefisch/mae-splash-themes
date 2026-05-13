@@ -1,0 +1,31 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate module manifest
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Check module.toml exists
+        run: test -f module.toml
+
+      - name: Check autoloads.scm exists
+        run: test -f autoloads.scm
+
+      - name: Check init.scm exists
+        run: test -f init.scm
+
+      - name: Validate TOML syntax
+        run: |
+          pip install toml
+          python3 -c "import toml; toml.load('module.toml')"
+
+      - name: Check assets exist
+        run: test -f assets/mae-logo.svg
