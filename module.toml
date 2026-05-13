@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Community splash screen art for MAE"
 authors = ["cuttlefisch"]
 license = "GPL-3.0-or-later"
-mae_version = ">=0.9.0"
+mae_version = ">=0.8.0"
 category = "ui"
 homepage = "https://github.com/cuttlefisch/mae-splash-themes"
 repository = "https://github.com/cuttlefisch/mae-splash-themes.git"
